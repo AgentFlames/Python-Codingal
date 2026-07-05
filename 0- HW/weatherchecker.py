@@ -7,3 +7,4 @@ elif 5 < temp <20:
 
 else:
     print("it is cold wear a good amount of clothing to keep yourself warm")
+
