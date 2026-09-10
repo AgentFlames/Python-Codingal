@@ -14,6 +14,27 @@ def main():
         "white" : pygame.Color('white'),      
     }
 
+
+
+    def make_darker_color(current_color):
+        darker_color = pygame.Color(
+            max(0, current_color.r - 80),
+            max(0, current_color.g - 80),
+            max(0, current_color.b - 80)
+        )
+
+        return darker_color
+
+    def make_lighter_color(current_color):
+        lighter_color = pygame.Color(
+            min(255, current_color.r + 80),
+            min(255, current_color.g + 80),
+            min(255, current_color.b + 80)
+        )
+
+        return lighter_color
+
+
     current_color = colours["white"]
     x,y = 30,30
 
@@ -43,6 +64,8 @@ def main():
 
         screen.fill((0,0,0))
         pygame.draw.rect(screen,current_color,(x,y, sprite_width, sprite_height))
+        pygame.draw.circle(screen,make_lighter_color(current_color), (100,100), radius=sprite_width, width=0 )
+        pygame.draw.circle(screen, make_darker_color(current_color), (400,400), radius=sprite_width, width=3 )
         pygame.display.flip()
 
     pygame.quit()
