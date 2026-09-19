@@ -75,6 +75,6 @@ while not exit:
     screen.fill(bg_color)
     all_sprites_list.draw(screen)
     pygame.display.flip()
-    clock.tick(240)
+    clock.tick(60)
 
 pygame.quit()
