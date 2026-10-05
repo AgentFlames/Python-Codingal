@@ -1,5 +1,6 @@
 import math 
 import pygame
+from pygame import mixer
 import random
 
 SCREEN_WIDTH = 800
@@ -13,7 +14,11 @@ ENEMY_SPEED_Y = 40
 BULLET_SPEED_Y = 10 
 COLLISON_DISTANCE = 27
 
+
+
 pygame.init()
+mixer.init()
+
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.image.load('/Users/pirteeklakhani/Desktop/Yuvraj/Python/Python Codingal/lesson 35+36/space bg.png')
 pygame.display.set_caption("Space Invader")
@@ -67,6 +72,7 @@ def enemy(x,y,i):
     screen.blit(enemyImg[i], (x,y))
 
 def fire_bullet(x,y): 
+    mixer.music.load("/Users/pirteeklakhani/Desktop/Yuvraj/Python/Python Codingal/lesson 35+36/pistol-shot.mp3")
     global bullet_state
     bullet_state = "fire"
     screen.blit(bulletImg, (x+16, y+10))
