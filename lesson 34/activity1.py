@@ -6,7 +6,7 @@ SCREEN_WIDTH, SCREEN_HEIGHT = 500,400
 MOVEMENT_SPEED = 5
 FONT_SIZE = 72
 pygame.init()
-background_image = pygame.transform.scale(pygame.image.load("/Users/pirteeklakhani/Desktop/Yuvraj/Python/Python Codingal/lesson 34/City_of_Tears_Fountain_Square.webp"), 
+background_image = pygame.transform.scale(pygame.image.load("/Users/pirteeklakhani/Desktop/Yuvraj/Python/Python Codingal/lesson 34/grass.jpg"), 
                                           (SCREEN_WIDTH, SCREEN_HEIGHT))
 
 font = pygame.font.SysFont("Times New Roman", FONT_SIZE)
@@ -27,7 +27,7 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Sprite Collison")
 all_sprites = pygame.sprite.Group()
 
-sprite1 = Sprite(pygame.Color("black"),20 ,30)
+sprite1 = Sprite(pygame.image("black"),20 ,30)
 sprite1.rect.x = random.randint(0,SCREEN_WIDTH-sprite1.rect.width)
 sprite1.rect.y = random.randint(0,SCREEN_HEIGHT-sprite1.rect.height)
 all_sprites.add(sprite1)
